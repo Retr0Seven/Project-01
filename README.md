@@ -194,10 +194,10 @@ Project-01/
 
 ### Class diagram
 
-![Class diagram](docs/diagrams/class-diagram.png)
+![Uploading class-diagram.png…]()
 
 ### Deployment diagram
+![Uploading deployment-diagram.png…]()
 
-![Deployment diagram](docs/diagrams/deployment-diagram.png)
 
 Diagram sources are in docs/ for anyone who wants to regenerate or edit them.

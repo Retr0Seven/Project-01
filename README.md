@@ -194,10 +194,12 @@ Project-01/
 
 ### Class diagram
 
-![Uploading class-diagram.png…]()
+<img width="3979" height="2865" alt="class-diagram" src="https://github.com/user-attachments/assets/2b735d65-03a2-42fe-a362-b13e8020041b" />
+
 
 ### Deployment diagram
-![Uploading deployment-diagram.png…]()
+<img width="1425" height="1708" alt="de![Uploading class-diagram.png…]()loyment-diagram" src="https://github.com/user-attachments/assets/d7754fb8-f8a8-4896-acf2-88ea48d3a3a4" />
+
 
 
 Diagram sources are in docs/ for anyone who wants to regenerate or edit them.

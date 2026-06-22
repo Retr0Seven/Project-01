@@ -1,0 +1,44 @@
+@startuml
+skinparam classAttributeIconSize 0
+title Project 1 TCP Group Chat - Class Diagram
+
+package "TCPServer" {
+  class TCPServer
+  class ServerApplication
+  class ChatServer
+  class ClientSession
+  class ServerConfig
+  class MessageFormatter
+  class Protocol
+  interface ServerEventListener
+  record ConnectedUser
+
+  TCPServer --> ServerApplication
+  ServerApplication ..|> ServerEventListener
+  ServerApplication --> ChatServer
+  ChatServer --> ClientSession
+  ChatServer --> ServerConfig
+  ChatServer --> MessageFormatter
+  ChatServer --> ConnectedUser
+  ClientSession --> Protocol
+  ChatServer --> ServerEventListener
+}
+
+package "TCPClient" {
+  class TCPClient
+  class ClientApplication
+  class ClientConnection
+  class ClientOptions
+  class Protocol as ClientProtocol
+  interface ClientConnectionListener
+
+  TCPClient --> ClientApplication
+  ClientApplication ..|> ClientConnectionListener
+  ClientApplication --> ClientConnection
+  ClientApplication --> ClientOptions
+  ClientConnection --> ClientProtocol
+  ClientConnection --> ClientConnectionListener
+}
+
+ChatServer "1" <--> "*" ClientConnection : TCP socket lines
+@enduml

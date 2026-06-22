@@ -1,0 +1,25 @@
+@startuml
+title Project 1 TCP Group Chat - Deployment Diagram
+
+node "Server Machine" {
+  artifact "TCPServer.jar" as serverJar
+  component "JavaFX Server UI" as serverUi
+  component "TCP ServerSocket\n0.0.0.0:3000" as serverSocket
+}
+
+node "Client Machine A" {
+  artifact "TCPClient.jar" as clientA
+  component "JavaFX Client UI" as clientUiA
+}
+
+node "Client Machine B" {
+  artifact "TCPClient.jar" as clientB
+  component "JavaFX Client UI" as clientUiB
+}
+
+clientUiA --> serverSocket : TCP/IP\nJOIN, MSG, commands
+clientUiB --> serverSocket : TCP/IP\nJOIN, MSG, commands
+serverSocket --> clientUiA : formatted chat lines
+serverSocket --> clientUiB : formatted chat lines
+serverUi --> serverSocket : start/stop, logs, users
+@enduml
